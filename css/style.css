@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+@font-face {
+    font-family: chancery;
+    src: url('../static/apple_chancery.ttf');
+}
+
+:root {
+    --midnight-blue: #1c3349;
+    --midnight-blue-transparent: #1c3349db;
+    --light-bg: #edeff2ef;
+    --light-bg-transparent: #edeff2db;
+    --navy: #2c3e50ef;
+    --navy-solid: #2c3e50;
+    --navy-dark: #23282d;
+    --navy-transparent: #2c3e50db;
+}
+
+a.animate {
+    position: relative;
+    display: inline-block;
+}
+
+a.animate:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+a.animate:hover:before,
+a.active.animate:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+body {
+    position: relative;
+    background-image: url('../static/images/fabric.png');
+}
+
+.centreContainer {
+    min-height: calc(100vh - 120px);
+    width: 100%;
+    display: table;
+    padding-bottom: 75px;
+}
+
+.centreDiv {
+    margin: 0;
+    font-family: chancery;
+    font-size: 30px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.centreDiv a,
+.centreDiv a.visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.centreImg {
+    max-width: 90%;
+    max-height: 60vh;
+    min-height: 30vw;
+    margin: auto;
+}
+
+.centreTitle {
+    display: inline-block;
+    line-height: 1.25;
+    position: relative;
+    padding-bottom: 65px;
+    border-bottom: 5px solid var(--navy);
+}
+
+.centreTitle::after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 50%;
+    width: 200px;
+    height: 100px;
+    background-image: url('../static/images/borderFlowers.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%);
+    border-top: inherit;
+    border-top-color: transparent;
+}
+
+.col-lg-3 {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+}
+
+.details {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.details p {
+    margin-bottom: 5px;
+}
+
+.details p a.animate:before {
+    bottom: 0;
+}
+
+.details p:first-of-type {
+    font-size: 18px;
+}
+
+.double .centreDiv {
+    padding: 100px;
+}
+
+.footer {
+    background: var(--navy-dark);
+    color: #fff;
+}
+
+.footer a,
+.footer a.visited {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.footer-copyright {
+    padding-right: 20px;
+}
+
+.hotel {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    box-sizing: border-box;
+    transition: transform 150ms ease-in;
+    width: 100%;
+}
+
+.hotel:hover {
+    cursor: pointer;
+    transform: translate(0.25rem, -0.25rem);
+}
+
+.hotel:hover::after {
+    transform: translate(-0.5rem, 0.5rem);
+}
+
+.hotel::after {
+    z-index: -2;
+    background-color: var(--navy-dark);
+    transition: inherit;
+    content: '';
+    position: absolute;
+    left: -2px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+}
+
+.hotelInner {
+    z-index: 100;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--navy-solid);
+    color: white;
+}
+
+.hotelMap iframe {
+    background: var(--navy-transparent);
+    width: 100%;
+}
+
+.lightBg {
+    background: var(--light-bg);
+}
+
+.imgbox {
+    display: grid;
+    min-height: calc(100vh - 120px);
+}
+
+.large {
+    font-family: 'Parisienne', chancery;
+    font-size: 50px;
+}
+
+
+.midnight-blue {
+    background: var(--midnight-blue);
+    color: #fff;
+}
+
+.nav {
+    margin: auto;
+    max-width: 1250px;
+}
+
+.navbarBackground {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1000;
+}
+
+.navy {
+    background: var(--navy);
+}
+
+.navy a.animate:before {
+    background-color: #eee;
+}
+
+.pad-bottom {
+    margin-bottom: 25px;
+}
+
+.panel {
+    min-height: 100vh;
+    padding: 60px 40px;
+}
+
+.panel.navy {
+    color: #eee;
+}
+
+.panel.navy .centreTitle {
+    border-color: #fff;
+}
+
+.small {
+    font-size: 20px;
+}
+
+.spaced {
+    line-height: 1.75;
+}
+
+.wide {
+    width: 90%;
+}
+
+#gifts .centreImg {
+    max-width: 50%;
+    max-height: none;
+    min-height: initial;
+    width: 25%;
+    min-width: 20vh;
+    margin-bottom: 30px;
+}
+
+#navbar {
+    background: transparent;
+    backdrop-filter: blur(3px);
+}
+
+#navbar .navbarBackground {
+    background: var(--navy-transparent);
+}
+
+#navbar .nav-pills .nav-link {
+    color: #fff;
+}
+
+#navbar .nav-pills .nav-link {
+    font-family: chancery;
+    font-size: 25px;
+    border-radius: 0;
+    color: #fff;
+    padding: 5px 10px;
+    transition: color 200ms ease;
+    width: auto;
+}
+
+#navbar .nav-pills .nav-link.active,
+#navbar .nav-pills .show > .nav-link {
+    background: none;
+}
+
+#navbar .nav-pills .nav-link.active,
+#navbar .nav-pills .show > .nav-link,
+#navbar .nav-pills .nav-link:hover {
+    color: #fff;
+}
+
+#navbar.navyAndDusky #navbarRight, #navbar.duskyBlue .navbarBackground {
+    background: var(--midnight-blue-transparent);
+}
+
+#navbar.lightBg .navbarBackground {
+    background: var(--light-bg-transparent);
+}
+
+#navbar.lightBg .nav-pills .nav-link.animate::before {
+    background-color: var(--navy);
+}
+
+#navbar.lightBg .nav-pills .nav-link,
+#navbar.lightBg .nav-pills .nav-link.active,
+#navbar.lightBg .nav-pills .show > .nav-link,
+#navbar.lightBg .nav-pills .nav-link:hover {
+    color: var(--navy);
+}
+
+#navbar .navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+#navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+#navbarLeft {
+    left: 0;
+    width: 66.6666666667%;
+}
+
+#navbarRight {
+    right: 0;
+    width: 33.3333333333%;
+}
+
+#poem {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+#venue a.animate:before {
+    bottom: 10px;
+}
+
+#venue .centreImg {
+    width: 60vw;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 991px) {
+
+    .double .centreDiv {
+        padding: 0;
+    }
+
+    .large {
+        font-size: 40px;
+    }
+
+    .navbar-collapse {
+        height: 100vh;
+        padding-top: 60px;
+    }
+
+    .nav.navbar-nav.nav-pills {
+        height: 100vh;
+    }
+
+    .nav-fill .nav-item, .nav-fill>.nav-link {
+        flex: none;
+        padding: 5px 0;
+    }
+
+    .panel {
+        min-height: 100vh;
+        padding: 80px 20px;
+    }
+
+    #navbar {
+        padding: 0;
+    }
+
+    #navbarLeft {
+        width: 100%;
+    }
+
+    #navbarRight {
+        width: 0%;
+    }
+
+    #venue .centreImg {
+        width: 100%;
+    }
+}
